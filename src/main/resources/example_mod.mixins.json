@@ -1,11 +1,13 @@
 {
 	"required": true,
 	"minVersion": "0.8",
-	"package": "com.example.example_mod.mixin",
+	"package": "w3xyz.chronitecore.mixin",
 	"compatibilityLevel": "JAVA_17",
-	"mixins": [],
+	"mixins": [
+      "ExampleMixin"
+    ],
 	"client": [
-		"TitleScreenMixin"
+      "TitleScreenMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
