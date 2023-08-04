@@ -1,0 +1,7 @@
+{
+  "variants":{
+    "": {
+      "model": "chronitecore:block/deepslate_chronite_ore"
+    }
+  }
+}

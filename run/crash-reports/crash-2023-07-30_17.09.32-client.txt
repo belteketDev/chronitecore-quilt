@@ -1,0 +1,299 @@
+---- Minecraft Crash Report ----
+// There are four lights!
+
+Time: 2023-07-30 17:09:32
+Description: Initializing game
+
+java.lang.RuntimeException: Could not execute entrypoint stage 'client_init' due to errors, provided by 'lodestone'!
+	at org.quiltmc.loader.impl.entrypoint.EntrypointUtils.lambda$invoke0$2(EntrypointUtils.java:66)
+	at org.quiltmc.loader.impl.util.ExceptionUtil.gatherExceptions(ExceptionUtil.java:34)
+	at org.quiltmc.loader.impl.entrypoint.EntrypointUtils.invoke0(EntrypointUtils.java:64)
+	at org.quiltmc.loader.impl.entrypoint.EntrypointUtils.invokeContainer(EntrypointUtils.java:49)
+	at org.quiltmc.loader.api.entrypoint.EntrypointUtil.invokeContainer(EntrypointUtil.java:54)
+	at org.quiltmc.loader.api.entrypoint.EntrypointUtil.invoke(EntrypointUtil.java:46)
+	at net.minecraft.client.MinecraftClient.handler$zel000$quilt_base$onInit(MinecraftClient.java:4523)
+	at net.minecraft.client.MinecraftClient.<init>(MinecraftClient.java:460)
+	at net.minecraft.client.main.Main.main(Main.java:211)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.quiltmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:524)
+	at org.quiltmc.loader.impl.launch.knot.Knot.launch(Knot.java:82)
+	at org.quiltmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:28)
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86)
+Caused by: java.lang.NoClassDefFoundError: eu/midnightdust/lib/config/MidnightConfig
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1012)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
+	at org.quiltmc.loader.impl.launch.knot.KnotClassLoader.defineClassFwd(KnotClassLoader.java:310)
+	at org.quiltmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:299)
+	at org.quiltmc.loader.impl.launch.knot.KnotClassDelegate.loadClassOnly(KnotClassDelegate.java:164)
+	at org.quiltmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:150)
+	at org.quiltmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:228)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	at team.lodestar.lodestone.LodestoneLibClient.onInitializeClient(LodestoneLibClient.java:23)
+	at org.quiltmc.loader.api.entrypoint.EntrypointUtil.lambda$invoke$1(EntrypointUtil.java:46)
+	at org.quiltmc.loader.impl.entrypoint.EntrypointUtils.invoke0(EntrypointUtils.java:62)
+	... 14 more
+Caused by: java.lang.ClassNotFoundException: eu.midnightdust.lib.config.MidnightConfig
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	at org.quiltmc.loader.impl.launch.knot.KnotClassDelegate.loadClassOnly(KnotClassDelegate.java:178)
+	at org.quiltmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:150)
+	at org.quiltmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:228)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 26 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at org.quiltmc.loader.impl.entrypoint.EntrypointUtils.lambda$invoke0$2(EntrypointUtils.java:66)
+	at org.quiltmc.loader.impl.util.ExceptionUtil.gatherExceptions(ExceptionUtil.java:34)
+	at org.quiltmc.loader.impl.entrypoint.EntrypointUtils.invoke0(EntrypointUtils.java:64)
+	at org.quiltmc.loader.impl.entrypoint.EntrypointUtils.invokeContainer(EntrypointUtils.java:49)
+	at org.quiltmc.loader.api.entrypoint.EntrypointUtil.invokeContainer(EntrypointUtil.java:54)
+	at org.quiltmc.loader.api.entrypoint.EntrypointUtil.invoke(EntrypointUtil.java:46)
+	at net.minecraft.client.MinecraftClient.handler$zel000$quilt_base$onInit(MinecraftClient.java:4523)
+	at net.minecraft.client.MinecraftClient.<init>(MinecraftClient.java:460)
+
+-- Initialization --
+Details:
+	Modules: 
+		ADVAPI32.dll:Advanced Windows 32 Base API:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		COMCTL32.dll:User Experience Controls Library:6.10 (WinBuild.160101.0800):Microsoft Corporation
+		CRYPT32.dll:Crypto API32:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		CRYPTBASE.dll:Base cryptographic API DLL:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		CRYPTSP.dll:Cryptographic Service Provider API:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		DBGHELP.DLL:Windows Image Helper:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		DNSAPI.dll:DNS Client API DLL:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		GDI32.dll:GDI Client DLL:10.0.22621.1778 (WinBuild.160101.0800):Microsoft Corporation
+		IMM32.DLL:Multi-User Windows IMM32 API Client DLL:10.0.22621.1344 (WinBuild.160101.0800):Microsoft Corporation
+		IPHLPAPI.DLL:IP Helper API:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		KERNEL32.DLL:Windows NT BASE API Client DLL:10.0.22621.1928 (WinBuild.160101.0800):Microsoft Corporation
+		KERNELBASE.dll:Windows NT BASE API Client DLL:10.0.22621.1928 (WinBuild.160101.0800):Microsoft Corporation
+		NSI.dll:NSI User-mode interface DLL:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		NTASN1.dll:Microsoft ASN.1 API:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		OLEAUT32.dll:OLEAUT32.DLL:10.0.22621.1992 (WinBuild.160101.0800):Microsoft Corporation
+		Ole32.dll:Microsoft OLE for Windows:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		PSAPI.DLL:Process Status Helper:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		Pdh.dll:Windows Performance Data Helper DLL:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		RPCRT4.dll:Remote Procedure Call Runtime:10.0.22621.1344 (WinBuild.160101.0800):Microsoft Corporation
+		SHCORE.dll:SHCORE:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		SHELL32.dll:Windows Shell Common Dll:10.0.22621.1635 (WinBuild.160101.0800):Microsoft Corporation
+		USER32.dll:Multi-User Windows USER API Client DLL:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		USERENV.dll:Userenv:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		VCRUNTIME140.dll:Microsoft® C Runtime Library:14.27.29112.0 built by: vcwrkspc:Microsoft Corporation
+		VERSION.dll:Version Checking and File Installation Libraries:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		WINHTTP.dll:Windows HTTP Services:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		WINMM.dll:MCI API DLL:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		WS2_32.dll:Windows Socket 2.0 32-Bit DLL:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		WSOCK32.dll:Windows Socket 32-Bit DLL:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		amsi.dll:Anti-Malware Scan Interface:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		apphelp.dll:Application Compatibility Client Library:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		aswAMSI.dll:Avast AMSI COM object:23.6.8271.0:AVAST Software
+		aswhook.dll:Avast Hook Library:23.6.8271.0:AVAST Software
+		awt.dll:OpenJDK Platform binary:17.0.7.0:Eclipse Adoptium
+		bcrypt.dll:Windows Cryptographic Primitives Library:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		bcryptPrimitives.dll:Windows Cryptographic Primitives Library:10.0.22621.1928 (WinBuild.160101.0800):Microsoft Corporation
+		breakgen64.dll
+		clbcatq.dll:COM+ Configuration Catalog:2001.12.10941.16384 (WinBuild.160101.0800):Microsoft Corporation
+		combase.dll:Microsoft COM for Windows:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		dbgcore.DLL:Windows Core Debugging Helpers:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		dhcpcsvc.DLL:DHCP Client Service:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		dhcpcsvc6.DLL:DHCPv6 Client:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		fwpuclnt.dll:FWP/IPsec User-Mode API:10.0.22621.1635 (WinBuild.160101.0800):Microsoft Corporation
+		gdi32full.dll:GDI Client DLL:10.0.22621.1778 (WinBuild.160101.0800):Microsoft Corporation
+		iertutil.dll:Run time utility for Internet Explorer:11.00.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		instrument.dll:OpenJDK Platform binary:17.0.7.0:Eclipse Adoptium
+		java.dll:OpenJDK Platform binary:17.0.7.0:Eclipse Adoptium
+		java.exe:OpenJDK Platform binary:17.0.7.0:Eclipse Adoptium
+		jemalloc.dll
+		jimage.dll:OpenJDK Platform binary:17.0.7.0:Eclipse Adoptium
+		jli.dll:OpenJDK Platform binary:17.0.7.0:Eclipse Adoptium
+		jna2779703420975989995.dll:JNA native library:6.1.4:Java(TM) Native Access (JNA)
+		jsvml.dll:OpenJDK Platform binary:17.0.7.0:Eclipse Adoptium
+		jvm.dll:OpenJDK 64-Bit server VM:17.0.7.0:Eclipse Adoptium
+		kernel.appcore.dll:AppModel API Host:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		lwjgl.dll
+		management.dll:OpenJDK Platform binary:17.0.7.0:Eclipse Adoptium
+		management_ext.dll:OpenJDK Platform binary:17.0.7.0:Eclipse Adoptium
+		msvcp140.dll:Microsoft® C Runtime Library:14.27.29112.0 built by: vcwrkspc:Microsoft Corporation
+		msvcp_win.dll:Microsoft® C Runtime Library:10.0.22621.608 (WinBuild.160101.0800):Microsoft Corporation
+		msvcrt.dll:Windows NT CRT DLL:7.0.22621.608 (WinBuild.160101.0800):Microsoft Corporation
+		mswsock.dll:Microsoft Windows Sockets 2.0 Service Provider:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		napinsp.dll:E-mail Naming Shim Provider:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		ncrypt.dll:Windows NCrypt Router:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		net.dll:OpenJDK Platform binary:17.0.7.0:Eclipse Adoptium
+		netutils.dll:Net Win32 API Helpers DLL:10.0.22621.674 (WinBuild.160101.0800):Microsoft Corporation
+		nio.dll:OpenJDK Platform binary:17.0.7.0:Eclipse Adoptium
+		nlansp_c.dll:NLA Namespace Service Provider DLL:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		ntdll.dll:NT Layer DLL:10.0.22621.1485 (WinBuild.160101.0800):Microsoft Corporation
+		perfos.dll:Windows System Performance Objects DLL:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		pfclient.dll:SysMain Client:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		pnrpnsp.dll:PNRP Name Space Provider:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		profapi.dll:User Profile Basic API:10.0.22621.1928 (WinBuild.160101.0800):Microsoft Corporation
+		rasadhlp.dll:Remote Access AutoDial Helper:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		rsaenh.dll:Microsoft Enhanced Cryptographic Provider:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		sechost.dll:Host for SCM/SDDL/LSA Lookup APIs:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		shlwapi.dll:Shell Light-weight Utility Library:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		srvcli.dll:Server Service Client DLL:10.0.22621.1928 (WinBuild.160101.0800):Microsoft Corporation
+		sunmscapi.dll:OpenJDK Platform binary:17.0.7.0:Eclipse Adoptium
+		ucrtbase.dll:Microsoft® C Runtime Library:10.0.22621.608 (WinBuild.160101.0800):Microsoft Corporation
+		urlmon.dll:OLE32 Extensions for Win32:11.00.22621.1344 (WinBuild.160101.0800):Microsoft Corporation
+		vcruntime140_1.dll:Microsoft® C Runtime Library:14.27.29112.0 built by: vcwrkspc:Microsoft Corporation
+		verify.dll:OpenJDK Platform binary:17.0.7.0:Eclipse Adoptium
+		win32u.dll:Win32u:10.0.22621.1992 (WinBuild.160101.0800):Microsoft Corporation
+		windows.storage.dll:Microsoft WinRT Storage API:10.0.22621.608 (WinBuild.160101.0800):Microsoft Corporation
+		winrnr.dll:LDAP RnR Provider DLL:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		wintypes.dll:Windows Base Types DLL:10.0.22621.1 (WinBuild.160101.0800):Microsoft Corporation
+		wshbth.dll:Windows Sockets Helper DLL:10.0.22621.1778 (WinBuild.160101.0800):Microsoft Corporation
+		zip.dll:OpenJDK Platform binary:17.0.7.0:Eclipse Adoptium
+Stacktrace:
+	at net.minecraft.client.main.Main.main(Main.java:211)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.quiltmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:524)
+	at org.quiltmc.loader.impl.launch.knot.Knot.launch(Knot.java:82)
+	at org.quiltmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:28)
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 17.0.7, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 319588040 bytes (304 MiB) / 706740224 bytes (674 MiB) up to 4273995776 bytes (4076 MiB)
+	CPUs: 12
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 5 5600X 6-Core Processor             
+	Identifier: AuthenticAMD Family 25 Model 33 Stepping 0
+	Microarchitecture: Zen 3
+	Frequency (GHz): 3.69
+	Number of physical packages: 1
+	Number of physical CPUs: 6
+	Number of logical CPUs: 12
+	Graphics card #0 name: NVIDIA GeForce RTX 2060
+	Graphics card #0 vendor: NVIDIA (0x10de)
+	Graphics card #0 VRAM (MB): 4095.00
+	Graphics card #0 deviceId: 0x1f08
+	Graphics card #0 versionInfo: DriverVersion=31.0.15.2802
+	Memory slot #0 capacity (MB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 2.13
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MB): 8192.00
+	Memory slot #1 clockSpeed (GHz): 2.13
+	Memory slot #1 type: DDR4
+	Virtual memory max (MB): 38825.64
+	Virtual memory used (MB): 24046.28
+	Swap memory total (MB): 22528.00
+	Swap memory used (MB): 1534.94
+	JVM Flags: 0 total; 
+	Quilt Mods: 
+		| Index | Mod                                               | ID                                           | Version             | Type    | File Hash (SHA-1)                        | File(s)                                                                                                                                                                                                                                                                                    |
+		|------:|---------------------------------------------------|----------------------------------------------|---------------------|---------|------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+		|    47 | Chronite Core                                     | chronitecore                                 | 0.1-1.20.1+1.20.1   | Quilt   |                                          | <user>\Documents\GitHub\chronitecore-quilt\build\resources\main                                                                                                                                                                                                                            |
+		|     3 | LodestoneLib                                      | lodestone                                    | 0.0.4+1.20.1        | Quilt   | 27efc08dc8a14aa3641d2d8448cb4eec04066249 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\unspecified\lodestone-0.0.4+1.20.1\74edc6331f82\lodestone-0.0.4+1.20.1-74edc6331f82.jar                                                              |
+		|    64 | Minecraft                                         | minecraft                                    | 1.20.1              | Builtin | 12a4c5266a8321b34066f17f634b37723db42e4e | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\minecraftMaven\net\minecraft\minecraft-merged-project-root\1.20.1-org.quiltmc.quilt-mappings.1_20_1.1.20.1+build.1-v2\minecraft-merged-project-root-1.20.1-org.quiltmc.quilt-mappings.1_20_1.1.20.1+build.1-v2.jar     |
+		|    45 | OpenJDK 64-Bit Server VM                          | java                                         | 17                  | Builtin |                                          | C:\Program Files\Eclipse Adoptium\jdk-17.0.7.7-hotspot                                                                                                                                                                                                                                     |
+		|    49 | Quilt Advancement API                             | quilt_advancement                            | 6.0.3+1.20.1        | Quilt   | 797acf5060ae63d379a51851bc8abfe06dcd6954 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\data\advancement\6.0.3+1.20.1\advancement-6.0.3+1.20.1.jar                                                                           |
+		|    16 | Quilt Base API                                    | quilt_base                                   | 6.0.3+1.20.1        | Quilt   | 9af261a9fd2ffd65a2b549558e142d9fd86a3943 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\core\qsl_base\6.0.3+1.20.1\qsl_base-6.0.3+1.20.1.jar                                                                                 |
+		|    28 | Quilt Biome API                                   | quilt_biome                                  | 6.0.3+1.20.1        | Quilt   | 9fb55ea1aca23488d7f181207d7e11ea40d120c7 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\worldgen\biome\6.0.3+1.20.1\biome-6.0.3+1.20.1.jar                                                                                   |
+		|    15 | Quilt Block Content Registry API                  | quilt_block_content_registry                 | 6.0.3+1.20.1        | Quilt   | 8d3c86a21a119386f388b3aed4312284a73b0af1 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\block\block_content_registry\6.0.3+1.20.1\block_content_registry-6.0.3+1.20.1.jar                                                    |
+		|    58 | Quilt Block Entity API                            | quilt_block_entity                           | 6.0.3+1.20.1        | Quilt   | 4bda1ffd7a7219674cfc4f1581001140b96360   | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\block\block_entity\6.0.3+1.20.1\block_entity-6.0.3+1.20.1.jar                                                                        |
+		|    10 | Quilt Block Extensions API                        | quilt_block_extensions                       | 6.0.3+1.20.1        | Quilt   | 1efd45f859cb4abf9934ccea4c7b652e520e7361 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\block\block_extensions\6.0.3+1.20.1\block_extensions-6.0.3+1.20.1.jar                                                                |
+		|    31 | Quilt Chat API                                    | quilt_chat                                   | 6.0.3+1.20.1        | Quilt   | e3bf81ad603e16d1758e03a0d0583bb4220c6eb4 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\management\chat\6.0.3+1.20.1\chat-6.0.3+1.20.1.jar                                                                                   |
+		|    24 | Quilt Client Command API                          | quilt_client_command                         | 6.0.3+1.20.1        | Quilt   | e6230ab5b302e743e2f43bf1fbde52d2ade46721 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\management\client_command\6.0.3+1.20.1\client_command-6.0.3+1.20.1.jar                                                               |
+		|    18 | Quilt Command API                                 | quilt_command                                | 6.0.3+1.20.1        | Quilt   | e5feb91792fda7f4cabc738974c2f561d9833197 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\management\command\6.0.3+1.20.1\command-6.0.3+1.20.1.jar                                                                             |
+		|    65 | Quilt Crash Info                                  | quilt_crash_info                             | 6.0.3+1.20.1        | Quilt   | 9056d53e37dcaa946dc64b355ab2b1b4f83e4208 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\core\crash_info\6.0.3+1.20.1\crash_info-6.0.3+1.20.1.jar                                                                             |
+		|    55 | Quilt Data Callback API                           | quilt_data_callback                          | 6.0.3+1.20.1        | Quilt   | 26a2da1c80879b7b7d91d2e1f6fa983c0cf910dd | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\core\data_callback\6.0.3+1.20.1\data_callback-6.0.3+1.20.1.jar                                                                       |
+		|    34 | Quilt Dimension API                               | quilt_dimension                              | 6.0.3+1.20.1        | Quilt   | 41cc04a7351a402c88b4dc5171b311b203830876 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\worldgen\dimension\6.0.3+1.20.1\dimension-6.0.3+1.20.1.jar                                                                           |
+		|     9 | Quilt Entity API                                  | quilt_entity                                 | 6.0.3+1.20.1        | Quilt   | 279ade5f47767cf255afdc4c01c4613c9e295fa2 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\entity\entity\6.0.3+1.20.1\entity-6.0.3+1.20.1.jar                                                                                   |
+		|    26 | Quilt Entity Events                               | quilt_entity_events                          | 6.0.3+1.20.1        | Quilt   | 58ad60d30b93b834b8d6a32b99eb07f43814513f | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\entity\entity_events\6.0.3+1.20.1\entity_events-6.0.3+1.20.1.jar                                                                     |
+		|    32 | Quilt Entity Networking API                       | quilt_entity_networking                      | 6.0.3+1.20.1        | Quilt   | 4efc7f4c30fd23aa5e0e76c8ea55899958ac7b73 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\entity\entity_networking\6.0.3+1.20.1\entity_networking-6.0.3+1.20.1.jar                                                             |
+		|    69 | Quilt Entity Rendering API                        | quilt_entity_rendering                       | 6.0.3+1.20.1        | Quilt   | 8077e9c7b3fe78732167a2cac65343176d1d6dd1 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\rendering\entity_rendering\6.0.3+1.20.1\entity_rendering-6.0.3+1.20.1.jar                                                            |
+		|    74 | Quilt Item Content Registry API                   | quilt_item_content_registry                  | 6.0.3+1.20.1        | Quilt   | bf6d35bb61b6823d4cc03f045b36e8e98f99bd4f | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\item\item_content_registry\6.0.3+1.20.1\item_content_registry-6.0.3+1.20.1.jar                                                       |
+		|    54 | Quilt Item Extensions API                         | quilt_item_extensions                        | 6.0.3+1.20.1        | Quilt   | 7176aae5b9f8a30cd8a88a3f5f86d83b4fa71bbc | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\item\item_extensions\6.0.3+1.20.1\item_extensions-6.0.3+1.20.1.jar                                                                   |
+		|    37 | Quilt Item Setting API                            | quilt_item_setting                           | 6.0.3+1.20.1        | Quilt   | e3175e03e1748ab3938ff972b94cd8929f371c20 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\item\item_setting\6.0.3+1.20.1\item_setting-6.0.3+1.20.1.jar                                                                         |
+		|    19 | Quilt Lifecycle Events                            | quilt_lifecycle_events                       | 6.0.3+1.20.1        | Quilt   | 1e613c72d5fdb89654b28782c87a31f031c5bd88 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\core\lifecycle_events\6.0.3+1.20.1\lifecycle_events-6.0.3+1.20.1.jar                                                                 |
+		|    44 | Quilt Loader                                      | quilt_loader                                 | 0.19.1              | Quilt   | 17e415fb9457f2f99a8c7b5bc5ebde88db41b8d0 | <user>\.gradle\caches\modules-2\files-2.1\org.quiltmc\quilt-loader\0.19.1\17e415fb9457f2f99a8c7b5bc5ebde88db41b8d0\quilt-loader-0.19.1.jar                                                                                                                                                 |
+		|    14 | Quilt Multipart Entity API                        | quilt_entity_multipart                       | 6.0.3+1.20.1        | Quilt   | 448d35e45bfa4d62eb493689cfe8e4f9b5256b84 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\entity\multipart\6.0.3+1.20.1\multipart-6.0.3+1.20.1.jar                                                                             |
+		|    40 | Quilt Networking                                  | quilt_networking                             | 6.0.3+1.20.1        | Quilt   | df985b06ffb804e7f101bb754c40c8215ec2be61 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\core\networking\6.0.3+1.20.1\networking-6.0.3+1.20.1.jar                                                                             |
+		|    76 | Quilt Point of Interest API                       | quilt_point_of_interest                      | 6.0.3+1.20.1        | Quilt   | 943f4bb3c8d8ad628e497310c75de01edc12377e | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\entity\point_of_interest\6.0.3+1.20.1\point_of_interest-6.0.3+1.20.1.jar                                                             |
+		|    70 | Quilt Recipe API                                  | quilt_recipe                                 | 6.0.3+1.20.1        | Quilt   | ce9befa158b5c07110915e801a126d5463cee70b | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\data\recipe\6.0.3+1.20.1\recipe-6.0.3+1.20.1.jar                                                                                     |
+		|     8 | Quilt Registry API                                | quilt_registry                               | 6.0.3+1.20.1        | Quilt   | dc678378c67d91f90ad15f3109d9a696e98ad812 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\core\registry\6.0.3+1.20.1\registry-6.0.3+1.20.1.jar                                                                                 |
+		|    27 | Quilt Registry Entry Attachment                   | quilt_registry_entry_attachment              | 6.0.3+1.20.1        | Quilt   | 56870a8d402920bd0d7a297465ea6635294f2d99 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\data\registry_entry_attachment\6.0.3+1.20.1\registry_entry_attachment-6.0.3+1.20.1.jar                                               |
+		|    42 | Quilt Resource Loader                             | quilt_resource_loader                        | 6.0.3+1.20.1        | Quilt   | 1d34d7ad45cb02dcd808ec53f75493220c54c182 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\core\resource_loader\6.0.3+1.20.1\resource_loader-6.0.3+1.20.1.jar                                                                   |
+		|     0 | Quilt Screen API                                  | quilt_screen                                 | 6.0.3+1.20.1        | Quilt   | 4cffbb7d0b08c7ec373153573e22eb0ca09fce78 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\gui\screen\6.0.3+1.20.1\screen-6.0.3+1.20.1.jar                                                                                      |
+		|    20 | Quilt Status Effect API                           | quilt_status_effect                          | 6.0.3+1.20.1        | Quilt   | 35b16d4efa7b8117ac62779adeaff7ac52c8f835 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\entity\status_effect\6.0.3+1.20.1\status_effect-6.0.3+1.20.1.jar                                                                     |
+		|     6 | Quilt Surface Rule API                            | quilt_surface_rule                           | 6.0.3+1.20.1        | Quilt   | 9fadb8f799e478f46d551c6206c53346ac5e0d34 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\worldgen\surface_rule\6.0.3+1.20.1\surface_rule-6.0.3+1.20.1.jar                                                                     |
+		|     5 | Quilt Tags API                                    | quilt_tags                                   | 6.0.3+1.20.1        | Quilt   | 7791e2d21d965635f7b2f048d76767680e8f3c54 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\data\tags\6.0.3+1.20.1\tags-6.0.3+1.20.1.jar                                                                                         |
+		|    61 | Quilt Testing API                                 | quilt_testing                                | 6.0.3+1.20.1        | Quilt   | 1ae1c537bed75179cb40b4b61500a4d708f9f249 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\core\testing\6.0.3+1.20.1\testing-6.0.3+1.20.1.jar                                                                                   |
+		|    21 | Quilt Tooltip API                                 | quilt_tooltip                                | 6.0.3+1.20.1        | Quilt   | f5d3a9eccdccac5cc430208e74eeff825030bb9  | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\gui\tooltip\6.0.3+1.20.1\tooltip-6.0.3+1.20.1.jar                                                                                    |
+		|    60 | Quilt Vehicle API                                 | quilt_vehicle                                | 6.0.3+1.20.1        | Quilt   | c9c1e7d6113e0596ca310c2e088176fc28f430c9 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\entity\vehicle\6.0.3+1.20.1\vehicle-6.0.3+1.20.1.jar                                                                                 |
+		|    71 | Quilt Villager API                                | quilt_villager                               | 6.0.3+1.20.1        | Quilt   | 09e939c3181857944bf7c8325b76420d4ab8d647 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\qsl\entity\villager\6.0.3+1.20.1\villager-6.0.3+1.20.1.jar                                                                               |
+		|     1 | Quilted Fabric API                                | quilted_fabric_api                           | 7.0.3+0.83.1-1.20.1 | Quilt   | 1f1ba88e149e5b23f3e36c3b848eff5d782d4772 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\quilted-fabric-api\7.0.3+0.83.1-1.20.1\quilted-fabric-api-7.0.3+0.83.1-1.20.1.jar                                     |
+		|    56 | Quilted Fabric API Base                           | quilted_fabric_api_base                      | 7.0.3+0.83.1-1.20.1 | Quilt   | d12aa8ac71bad3ac4dcc3073e3859809db2e2e01 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-api-base\7.0.3+0.83.1-1.20.1\fabric-api-base-7.0.3+0.83.1-1.20.1.jar                                           |
+		|     2 | Quilted Fabric API Lookup API (v1)                | quilted_fabric_api_lookup_api_v1             | 7.0.3+0.83.1-1.20.1 | Quilt   | 5f53157dbe2e2c24ef164511b744fc1d292f52f8 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-api-lookup-api-v1\7.0.3+0.83.1-1.20.1\fabric-api-lookup-api-v1-7.0.3+0.83.1-1.20.1.jar                         |
+		|    62 | Quilted Fabric Biome API (v1)                     | quilted_fabric_biome_api_v1                  | 7.0.3+0.83.1-1.20.1 | Quilt   | 05325d2632f92c2d1ea485f00c28e00337db075f | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-biome-api-v1\7.0.3+0.83.1-1.20.1\fabric-biome-api-v1-7.0.3+0.83.1-1.20.1.jar                                   |
+		|    79 | Quilted Fabric Block API (v1)                     | quilted_fabric_block_api_v1                  | 7.0.3+0.83.1-1.20.1 | Quilt   | dcc52f4f0ac3d5aedd29c663f2451302f08cad82 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-block-api-v1\7.0.3+0.83.1-1.20.1\fabric-block-api-v1-7.0.3+0.83.1-1.20.1.jar                                   |
+		|    13 | Quilted Fabric BlockRenderLayer Registration (v1) | quilted_fabric_blockrenderlayer_v1           | 7.0.3+0.83.1-1.20.1 | Quilt   | 8ba8ffca56e473df7b5a16ccd6f1d1487bd5dc6  | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-blockrenderlayer-v1\7.0.3+0.83.1-1.20.1\fabric-blockrenderlayer-v1-7.0.3+0.83.1-1.20.1.jar                     |
+		|    43 | Quilted Fabric Client Tags                        | quilted_fabric_client_tags_api_v1            | 7.0.3+0.83.1-1.20.1 | Quilt   | 656cb844cff06be486f162c12ce8e7fb4b3f4223 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-client-tags-api-v1\7.0.3+0.83.1-1.20.1\fabric-client-tags-api-v1-7.0.3+0.83.1-1.20.1.jar                       |
+		|    67 | Quilted Fabric Command API (v2)                   | quilted_fabric_command_api_v2                | 7.0.3+0.83.1-1.20.1 | Quilt   | 99cd6ae663302af27bdd6c5d429e553f5fcf2130 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-command-api-v2\7.0.3+0.83.1-1.20.1\fabric-command-api-v2-7.0.3+0.83.1-1.20.1.jar                               |
+		|    77 | Quilted Fabric Content Registries (v0)            | quilted_fabric_content_registries_v0         | 7.0.3+0.83.1-1.20.1 | Quilt   | 1147bcd69036de4c18974aa9184d19c227f28ad1 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-content-registries-v0\7.0.3+0.83.1-1.20.1\fabric-content-registries-v0-7.0.3+0.83.1-1.20.1.jar                 |
+		|    73 | Quilted Fabric Convention Tags API (v1)           | quilted_fabric_convention_tags_api_v1        | 7.0.3+0.83.1-1.20.1 | Quilt   | d927ab5c3c65525ccc0eb68883912334cd9f6ed6 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-convention-tags-v1\7.0.3+0.83.1-1.20.1\fabric-convention-tags-v1-7.0.3+0.83.1-1.20.1.jar                       |
+		|    72 | Quilted Fabric Crash Report Info (v1)             | quilted_fabric_crash_report_info_v1          | 7.0.3+0.83.1-1.20.1 | Quilt   | 3d9ee7b516992cafd22427543ed4a8d8e1751139 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-crash-report-info-v1\7.0.3+0.83.1-1.20.1\fabric-crash-report-info-v1-7.0.3+0.83.1-1.20.1.jar                   |
+		|    53 | Quilted Fabric Data Generation API (v1)           | quilted_fabric_data_generation_api_v1        | 7.0.3+0.83.1-1.20.1 | Quilt   | 7aa20875409b1cac4466b6ec358710809ed86e5f | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-data-generation-api-v1\7.0.3+0.83.1-1.20.1\fabric-data-generation-api-v1-7.0.3+0.83.1-1.20.1.jar               |
+		|    68 | Quilted Fabric Dimensions API (v1)                | quilted_fabric_dimensions_v1                 | 7.0.3+0.83.1-1.20.1 | Quilt   | 7a3faf326b785dbb773d7a0479420d3e2c94bf03 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-dimensions-v1\7.0.3+0.83.1-1.20.1\fabric-dimensions-v1-7.0.3+0.83.1-1.20.1.jar                                 |
+		|    35 | Quilted Fabric Entity Events (v1)                 | quilted_fabric_entity_events_v1              | 7.0.3+0.83.1-1.20.1 | Quilt   | 6ed0e50a7f2331dec7520682b3f74099f5a7389  | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-entity-events-v1\7.0.3+0.83.1-1.20.1\fabric-entity-events-v1-7.0.3+0.83.1-1.20.1.jar                           |
+		|    25 | Quilted Fabric Events Interaction (v0)            | quilted_fabric_events_interaction_v0         | 7.0.3+0.83.1-1.20.1 | Quilt   | fe268ddbd21d5b0af9aca5264dfa1b522dc6274  | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-events-interaction-v0\7.0.3+0.83.1-1.20.1\fabric-events-interaction-v0-7.0.3+0.83.1-1.20.1.jar                 |
+		|     4 | Quilted Fabric Game Rule API (v1)                 | quilted_fabric_game_rule_api_v1              | 7.0.3+0.83.1-1.20.1 | Quilt   | bcb6f082d8e00e042aa2dd87778307c344e2e950 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-game-rule-api-v1\7.0.3+0.83.1-1.20.1\fabric-game-rule-api-v1-7.0.3+0.83.1-1.20.1.jar                           |
+		|    59 | Quilted Fabric Item API (v1)                      | quilted_fabric_item_api_v1                   | 7.0.3+0.83.1-1.20.1 | Quilt   | 97c0c6de552d5b6c28eec71f8d0868cb3e4ef41d | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-item-api-v1\7.0.3+0.83.1-1.20.1\fabric-item-api-v1-7.0.3+0.83.1-1.20.1.jar                                     |
+		|    11 | Quilted Fabric Item Group API (v1)                | quilted_fabric_item_group_api_v1             | 7.0.3+0.83.1-1.20.1 | Quilt   | 9606a1c7f636e07ff5f45fd71fb988bb4c928ac  | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-item-group-api-v1\7.0.3+0.83.1-1.20.1\fabric-item-group-api-v1-7.0.3+0.83.1-1.20.1.jar                         |
+		|    52 | Quilted Fabric Key Binding API (v1)               | quilted_fabric_key_binding_api_v1            | 7.0.3+0.83.1-1.20.1 | Quilt   | 85a1d8ee6e88b5a2c4cec93b21dac678eda36f95 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-key-binding-api-v1\7.0.3+0.83.1-1.20.1\fabric-key-binding-api-v1-7.0.3+0.83.1-1.20.1.jar                       |
+		|    22 | Quilted Fabric Lifecycle Events (v1)              | quilted_fabric_lifecycle_events_v1           | 7.0.3+0.83.1-1.20.1 | Quilt   | 7ec954c62d3570ebcf467463072d9bea53ce4eec | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-lifecycle-events-v1\7.0.3+0.83.1-1.20.1\fabric-lifecycle-events-v1-7.0.3+0.83.1-1.20.1.jar                     |
+		|    80 | Quilted Fabric Loot API (v2)                      | quilted_fabric_loot_api_v2                   | 7.0.3+0.83.1-1.20.1 | Quilt   | 3a109cfd33f0288bb9cf454a071aa4d0c52b7e0  | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-loot-api-v2\7.0.3+0.83.1-1.20.1\fabric-loot-api-v2-7.0.3+0.83.1-1.20.1.jar                                     |
+		|    33 | Quilted Fabric Message API (v1)                   | quilted_fabric_message_api_v1                | 7.0.3+0.83.1-1.20.1 | Quilt   | 002791517613575801d2a9ef60611ac221512c4a | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-message-api-v1\7.0.3+0.83.1-1.20.1\fabric-message-api-v1-7.0.3+0.83.1-1.20.1.jar                               |
+		|    36 | Quilted Fabric Mining Level API (v1)              | quilted_fabric_mining_level_api_v1           | 7.0.3+0.83.1-1.20.1 | Quilt   | e8701353e5906941598945f5d9ff9bdd8c05a1dc | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-mining-level-api-v1\7.0.3+0.83.1-1.20.1\fabric-mining-level-api-v1-7.0.3+0.83.1-1.20.1.jar                     |
+		|    23 | Quilted Fabric Models (v0)                        | quilted_fabric_models_v0                     | 7.0.3+0.83.1-1.20.1 | Quilt   | a66e4db4e0ab475f2c2708c07c7953bed821d0f4 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-models-v0\7.0.3+0.83.1-1.20.1\fabric-models-v0-7.0.3+0.83.1-1.20.1.jar                                         |
+		|    39 | Quilted Fabric Networking API (v1)                | quilted_fabric_networking_api_v1             | 7.0.3+0.83.1-1.20.1 | Quilt   | fdb83a523ccd9d3f3b6dfc0305ad8eef1362e509 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-networking-api-v1\7.0.3+0.83.1-1.20.1\fabric-networking-api-v1-7.0.3+0.83.1-1.20.1.jar                         |
+		|    30 | Quilted Fabric Object Builder API (v1)            | quilted_fabric_object_builder_api_v1         | 7.0.3+0.83.1-1.20.1 | Quilt   | 616e23ed02a5b24b19afc55e5efb8ba3049f5ffc | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-object-builder-api-v1\7.0.3+0.83.1-1.20.1\fabric-object-builder-api-v1-7.0.3+0.83.1-1.20.1.jar                 |
+		|    78 | Quilted Fabric Particles (v1)                     | quilted_fabric_particles_v1                  | 7.0.3+0.83.1-1.20.1 | Quilt   | fc4eff39e47bc93eb3e6b71c15e467ad766253b9 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-particles-v1\7.0.3+0.83.1-1.20.1\fabric-particles-v1-7.0.3+0.83.1-1.20.1.jar                                   |
+		|    29 | Quilted Fabric Recipe API (v1)                    | quilted_fabric_recipe_api_v1                 | 7.0.3+0.83.1-1.20.1 | Quilt   | ffd14416a0628cdead932c4e22817b49d7e92240 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-recipe-api-v1\7.0.3+0.83.1-1.20.1\fabric-recipe-api-v1-7.0.3+0.83.1-1.20.1.jar                                 |
+		|    38 | Quilted Fabric Registry Sync (v0)                 | quilted_fabric_registry_sync_v0              | 7.0.3+0.83.1-1.20.1 | Quilt   | 998ae73aed24f78f6c1704248aa53523d792f638 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-registry-sync-v0\7.0.3+0.83.1-1.20.1\fabric-registry-sync-v0-7.0.3+0.83.1-1.20.1.jar                           |
+		|    75 | Quilted Fabric Renderer - Indigo                  | quilted_fabric_renderer_indigo               | 7.0.3+0.83.1-1.20.1 | Quilt   | 83884f49ac865ff618885ac871ff0debff062b14 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-renderer-indigo\7.0.3+0.83.1-1.20.1\fabric-renderer-indigo-7.0.3+0.83.1-1.20.1.jar                             |
+		|    46 | Quilted Fabric Renderer API (v1)                  | quilted_fabric_renderer_api_v1               | 7.0.3+0.83.1-1.20.1 | Quilt   | 7f10d5aa575dfc3c6ac30e39ea8cccce54f8dd3  | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-renderer-api-v1\7.0.3+0.83.1-1.20.1\fabric-renderer-api-v1-7.0.3+0.83.1-1.20.1.jar                             |
+		|    41 | Quilted Fabric Rendering (v1)                     | quilted_fabric_rendering_v1                  | 7.0.3+0.83.1-1.20.1 | Quilt   | 2b09e64a4a91bbe684d39b25f0026ea2938be9fa | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-rendering-v1\7.0.3+0.83.1-1.20.1\fabric-rendering-v1-7.0.3+0.83.1-1.20.1.jar                                   |
+		|    12 | Quilted Fabric Rendering Data Attachment (v1)     | quilted_fabric_rendering_data_attachment_v1  | 7.0.3+0.83.1-1.20.1 | Quilt   | 6c400e49f9a7c37a85bc740eb400c54b012c5c79 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-rendering-data-attachment-v1\7.0.3+0.83.1-1.20.1\fabric-rendering-data-attachment-v1-7.0.3+0.83.1-1.20.1.jar   |
+		|    57 | Quilted Fabric Rendering Fluids (v1)              | quilted_fabric_rendering_fluids_v1           | 7.0.3+0.83.1-1.20.1 | Quilt   | 43e772b42c6b6fd38ec72ff3cd7436bab9a4dbb9 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-rendering-fluids-v1\7.0.3+0.83.1-1.20.1\fabric-rendering-fluids-v1-7.0.3+0.83.1-1.20.1.jar                     |
+		|     7 | Quilted Fabric Resource Conditions API (v1)       | quilted_fabric_resource_conditions_api_v1    | 7.0.3+0.83.1-1.20.1 | Quilt   | b28895b6083afa8006bfa34c4768a2e7857437bd | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-resource-conditions-api-v1\7.0.3+0.83.1-1.20.1\fabric-resource-conditions-api-v1-7.0.3+0.83.1-1.20.1.jar       |
+		|    48 | Quilted Fabric Resource Loader (v0)               | quilted_fabric_resource_loader_v0            | 7.0.3+0.83.1-1.20.1 | Quilt   | 1d13cb0c3013f978a36e0bac4ce10cb7d100cd67 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-resource-loader-v0\7.0.3+0.83.1-1.20.1\fabric-resource-loader-v0-7.0.3+0.83.1-1.20.1.jar                       |
+		|    51 | Quilted Fabric Screen API (v1)                    | quilted_fabric_screen_api_v1                 | 7.0.3+0.83.1-1.20.1 | Quilt   | caa9c4133626ee7a79881fa6216995ce820052de | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-screen-api-v1\7.0.3+0.83.1-1.20.1\fabric-screen-api-v1-7.0.3+0.83.1-1.20.1.jar                                 |
+		|    17 | Quilted Fabric Screen Handler API (v1)            | quilted_fabric_screen_handler_api_v1         | 7.0.3+0.83.1-1.20.1 | Quilt   | 8133978093608cf048eae2e136c1c3061d780955 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-screen-handler-api-v1\7.0.3+0.83.1-1.20.1\fabric-screen-handler-api-v1-7.0.3+0.83.1-1.20.1.jar                 |
+		|    50 | Quilted Fabric Sound API (v1)                     | quilted_fabric_sound_api_v1                  | 7.0.3+0.83.1-1.20.1 | Quilt   | 120644ef17e50531a8f56615b82e79366a3a3c60 | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-sound-api-v1\7.0.3+0.83.1-1.20.1\fabric-sound-api-v1-7.0.3+0.83.1-1.20.1.jar                                   |
+		|    63 | Quilted Fabric Transfer API (v1)                  | quilted_fabric_transfer_api_v1               | 7.0.3+0.83.1-1.20.1 | Quilt   | a1fa7b5a4f8ed18dc0d289320a9e35bef5beec3c | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-transfer-api-v1\7.0.3+0.83.1-1.20.1\fabric-transfer-api-v1-7.0.3+0.83.1-1.20.1.jar                             |
+		|    66 | Quilted Fabric Transitive Access Wideners (v1)    | quilted_fabric_transitive_access_wideners_v1 | 7.0.3+0.83.1-1.20.1 | Quilt   | 9b8e321fcc561396f36ddf6c28f0618d295d680a | <user>\Documents\GitHub\chronitecore-quilt\.gradle\quilt-loom-cache\remapped_mods\org_quiltmc_quilt_mappings_1_20_1_1_20_1_build_1_v2\org\quiltmc\quilted-fabric-api\fabric-transitive-access-wideners-v1\7.0.3+0.83.1-1.20.1\fabric-transitive-access-wideners-v1-7.0.3+0.83.1-1.20.1.jar |
+		|------:|---------------------------------------------------|----------------------------------------------|---------------------|---------|------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+		Mod Table Version: 2
+		Plugin Types: {quilt_loader=[Quilt, Builtin]}
+		
+	Quilted Fabric API: !! WARNING !! This instance is using Fabric API modules re-implemented by QSL. If the issue comes from Quilted Fabric API, DO NOT report to Fabric; report them to Quilt instead!
+	Launched Version: Quilt Loom
+	Backend library: LWJGL version 3.3.1 build 7
+	Backend API: Unknown
+	Window size: <not initialized>
+	GL Caps: Using framebuffer using OpenGL 3.2
+	GL debug messages: <disabled>
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'quilt'
+	Type: Client (map_client.txt)
+	CPU: <unknown>

@@ -1,0 +1,7 @@
+{
+  "variants":{
+    "": {
+      "model": "chronitecore:block/ionized_chronite_block"
+    }
+  }
+}
