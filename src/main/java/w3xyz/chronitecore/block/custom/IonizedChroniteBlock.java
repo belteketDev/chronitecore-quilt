@@ -52,11 +52,7 @@ public class IonizedChroniteBlock extends Block {
 			BlockPos targetPos = pos;
 			if (isPlayerLookingAtBlock(player, targetPos)) {
 				ChroniteCore.LOGGER.info("looking");
-				flash(world, pos);
-				BlockPos playerPos = player.getBlockPos();
-				flash(world, playerPos);
-			} else {
-				ChroniteCore.LOGGER.info("not looking");
+
 			}
 		}
 
