@@ -1,29 +1,12 @@
 package w3xyz.chronitecore.block.custom;
+
 import io.netty.buffer.Unpooled;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.PlayerFaceRenderer;
-import net.minecraft.client.particle.ParticleTextureSheet;
-import net.minecraft.client.render.GameRenderer;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.resource.Resource;
-import net.minecraft.scoreboard.ScoreboardCriterion;
-import net.minecraft.sound.SoundEvent;
-
-
-import net.minecraft.client.sound.Sound;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.function.CommandFunctionManager;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.RaycastContext;
-import org.quiltmc.qsl.lifecycle.api.event.ServerTickEvents;
 import org.quiltmc.qsl.networking.api.ServerPlayNetworking;
 import team.lodestar.lodestone.setup.LodestoneParticles;
 import net.minecraft.block.Block;
@@ -31,31 +14,15 @@ import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
-import team.lodestar.lodestone.setup.LodestoneRenderLayers;
-import team.lodestar.lodestone.setup.LodestoneScreenParticles;
 import team.lodestar.lodestone.systems.rendering.particle.LodestoneWorldParticleTextureSheet;
-import team.lodestar.lodestone.systems.rendering.particle.ScreenParticleBuilder;
-import team.lodestar.lodestone.systems.rendering.particle.SimpleParticleEffect;
 import team.lodestar.lodestone.systems.rendering.particle.WorldParticleBuilder;
 import team.lodestar.lodestone.systems.rendering.particle.data.ColorParticleData;
 import team.lodestar.lodestone.systems.rendering.particle.data.GenericParticleData;
-import team.lodestar.lodestone.systems.rendering.particle.data.SpinParticleData;
-import team.lodestar.lodestone.systems.rendering.particle.screen.LodestoneScreenParticleTextureSheet;
-import team.lodestar.lodestone.systems.rendering.particle.screen.ScreenParticleEffect;
-import team.lodestar.lodestone.systems.rendering.particle.screen.ScreenParticleType;
-import team.lodestar.lodestone.systems.rendering.particle.screen.base.ScreenParticle;
-import team.lodestar.lodestone.systems.rendering.particle.type.LodestoneScreenParticleType;
 import w3xyz.chronitecore.ChroniteCore;
-import net.minecraft.util.hit.BlockHitResult;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Random;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import java.util.function.Consumer;
-import java.util.List;
 
 
 public class IonizedChroniteBlock extends Block {
@@ -75,7 +42,6 @@ public class IonizedChroniteBlock extends Block {
 		for (int i = 0; i < 599; i++) {
 			summonTower(50, pos, world);
 		}
-		//flash(world, pos);
 
 
 
@@ -167,19 +133,6 @@ public class IonizedChroniteBlock extends Block {
 	public void flash(World world, BlockPos pos){
 		Color fuckMyEyes = new Color(255, 89, 55);
 		Color fuckMyEyesMore= new Color(255, 223, 138);
-		// Get the player's position
-
-		// Get the server instance
-
-
-// Create the packet
-
-
-
-
-
-
-
 
 
 	}
@@ -220,19 +173,6 @@ public class IonizedChroniteBlock extends Block {
 		int u = lifetime.nextInt(351) + 400;
 		Random yesno = new Random();
 		double l = yesno.nextDouble();
-		if (l == 1){
-			Color c1 = new Color(255, 186, 67, 255);
-			Color c2 = new Color(255, 52, 0, 255);
-			WorldParticleBuilder.create(LodestoneParticles.SMOKE_PARTICLE)
-					.setColorData(ColorParticleData.create(c1, c2).build())
-					.setRenderType(LodestoneWorldParticleTextureSheet.LUMITRANSPARENT)
-					.setScaleData(GenericParticleData.create(0f,15f, 30f).build())
-					.setLifetime(u)
-					.setMotion(0, 0.090, 0)
-					.setRandomOffset(2 * 2.5f)
-					.setGravity(1/5)
-					.spawn(world, pos.getX(), pos.getY() + n, pos.getZ());
-		}else{
 			Color c1 = new Color(103, 57, 26, 255);
 			Color c2 = new Color(54, 43, 36, 255);
 			WorldParticleBuilder.create(LodestoneParticles.SMOKE_PARTICLE)
@@ -249,7 +189,7 @@ public class IonizedChroniteBlock extends Block {
 
 
 
-	}
+
 	public void summonCone(int rad, BlockPos pos, World world){
 		Random rand = new Random();
 		int n = rand.nextInt(100);
@@ -258,24 +198,6 @@ public class IonizedChroniteBlock extends Block {
 		Random yesno = new Random();
 		double l = yesno.nextDouble();
 
-		if (l == 1){
-			Color c1 = new Color(255, 186, 67, 255);
-			Color c2 = new Color(255, 52, 0, 255);
-		for (int y = 0; y < n; y++) {
-			double angle = rand.nextDouble() * 2 * Math.PI;
-			int x = (int) (rad * (n - y) / n * Math.cos(angle));
-			int z = (int) (rad * (n - y) / n * Math.sin(angle));
-			WorldParticleBuilder.create(LodestoneParticles.SMOKE_PARTICLE)
-					.setColorData(ColorParticleData.create(c1, c2).build())
-					.setRenderType(LodestoneWorldParticleTextureSheet.LUMITRANSPARENT)
-					.setScaleData(GenericParticleData.create(0f, 15f, 30f).build())
-					.setLifetime(u)
-					.setMotion(0, 0.090, 0)
-					.setRandomOffset(2 * 2.5f)
-					.setGravity(1 / 5)
-					.spawn(world, pos.getX() + x, pos.getY() + y, pos.getZ() + z);
-		}
-		}else{
 			for (int y = 0; y < n; y++) {
 				Color c1 = new Color(103, 57, 26, 255);
 				Color c2 = new Color(54, 43, 36, 255);
@@ -292,7 +214,7 @@ public class IonizedChroniteBlock extends Block {
 						.setGravity(1 / 5)
 						.spawn(world, pos.getX() + x, pos.getY() + y, pos.getZ() + z);
 			}
-			}
+
 	}
 
 	public void createAirSphere(World world, BlockPos center, int radius) {

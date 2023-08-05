@@ -47,10 +47,7 @@ public class ChroniteCoreClient implements ClientModInitializer {
 
 		});*/
 	}
-	public Vec3d getCameraPosition(MinecraftClient client) {
-		GameRenderer renderer = client.gameRenderer;
-		return renderer.getCamera().getPos();
-	}
+
 
 }
 
