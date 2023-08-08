@@ -1,6 +1,9 @@
 package w3xyz.chronitecore;
 
 
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.qsl.base.api.entrypoint.client.ClientModInitializer;
 
@@ -23,7 +26,14 @@ public class ChroniteCoreClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient(ModContainer mod) {
-
+	}public boolean isPlayerLookingAtBlock(PlayerEntity player, BlockPos targetPos) {
+		Vec3d playerLookVec = player.getRotationVec(1.0F);
+		Vec3d playerPos = player.getCameraPosVec(1.0F);
+		Vec3d targetVec = new Vec3d(targetPos.getX() + 0.5, targetPos.getY() + 0.5, targetPos.getZ() + 0.5);
+		Vec3d directionToTarget = targetVec.subtract(playerPos).normalize();
+		double dotProduct = playerLookVec.dotProduct(directionToTarget);
+		double threshold = Math.cos(Math.toRadians(30));
+		return dotProduct > threshold;
 	}
 
 
