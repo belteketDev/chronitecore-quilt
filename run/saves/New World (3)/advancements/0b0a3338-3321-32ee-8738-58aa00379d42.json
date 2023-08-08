@@ -1,0 +1,23 @@
+{
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2023-08-08 15:14:43 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/blue_dye_from_cornflower": {
+    "criteria": {
+      "has_cornflower": "2023-08-08 15:14:43 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:beach": "2023-08-08 15:14:48 +0300",
+      "minecraft:cold_ocean": "2023-08-08 15:14:45 +0300",
+      "minecraft:forest": "2023-08-08 15:15:06 +0300"
+    },
+    "done": false
+  },
+  "DataVersion": 3465
+}

@@ -21,6 +21,8 @@ import team.lodestar.lodestone.systems.rendering.particle.WorldParticleBuilder;
 import team.lodestar.lodestone.systems.rendering.particle.data.ColorParticleData;
 import team.lodestar.lodestone.systems.rendering.particle.data.GenericParticleData;
 import w3xyz.chronitecore.ChroniteCore;
+import w3xyz.chronitecore.sound.ModSounds;
+
 import java.awt.*;
 import java.util.Random;
 import java.util.concurrent.Executors;
@@ -63,17 +65,18 @@ public class IonizedChroniteBlock extends Block {
 			double delay = distance/100;
 			Executors.newSingleThreadScheduledExecutor();
 			executor.schedule(() -> {
-				player.playSound(SoundEvents.BLOCK_END_PORTAL_SPAWN, // The sound that will play
-						SoundCategory.MASTER,
+				ChroniteCore.LOGGER.info("now " + delay);
+				player.playSound(ModSounds.SHOCKWAVE, // The sound that will play
+						SoundCategory.HOSTILE,
 						1f,
 						1f);
 			}, (long) delay, TimeUnit.SECONDS);
 			ChroniteCore.LOGGER.info("cheese" + delay);
 			if (isPlayerLookingAtBlock(player, targetPos)) {
 				ChroniteCore.LOGGER.info("looking");
-
 			}
 		}
+
 
 
 		world.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 200.0F, World.ExplosionSourceType.BLOCK);
