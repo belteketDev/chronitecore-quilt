@@ -5,6 +5,8 @@ import net.minecraft.network.PacketByteBuf;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Vec3d;
 import org.quiltmc.qsl.networking.api.ServerPlayNetworking;
@@ -21,8 +23,10 @@ import team.lodestar.lodestone.systems.rendering.particle.data.GenericParticleDa
 import w3xyz.chronitecore.ChroniteCore;
 import java.awt.*;
 import java.util.Random;
+import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 
 public class IonizedChroniteBlock extends Block {
@@ -50,6 +54,21 @@ public class IonizedChroniteBlock extends Block {
 		if (entity instanceof PlayerEntity) {
 			PlayerEntity player = (PlayerEntity) entity;
 			BlockPos targetPos = pos;
+			player.getPos();
+			BlockPos blockPos = pos;
+			Vec3d blockVec = new Vec3d(blockPos.getX(), blockPos.getY(), blockPos.getZ());
+			Vec3d playerVec = new Vec3d(player.getX(), player.getY(), player.getZ());
+			double distanceSq = blockVec.squaredDistanceTo(playerVec);
+			double distance = Math.sqrt(distanceSq);
+			double delay = distance/100;
+			Executors.newSingleThreadScheduledExecutor();
+			executor.schedule(() -> {
+				player.playSound(SoundEvents.BLOCK_END_PORTAL_SPAWN, // The sound that will play
+						SoundCategory.MASTER,
+						1f,
+						1f);
+			}, (long) delay, TimeUnit.SECONDS);
+			ChroniteCore.LOGGER.info("cheese" + delay);
 			if (isPlayerLookingAtBlock(player, targetPos)) {
 				ChroniteCore.LOGGER.info("looking");
 
