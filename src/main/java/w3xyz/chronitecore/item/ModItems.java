@@ -11,10 +11,8 @@ import w3xyz.chronitecore.ChroniteCore;
 public class ModItems {
 	public static final Item CHRONITE = registerItem("chronite", new Item(new QuiltItemSettings()));
 	public static final Item RAW_CHRONITE = registerItem("raw_chronite", new Item(new QuiltItemSettings()));
-
-
-
-
+	public static final Item ION_SHARD = registerItem("ion_shard", new Item(new QuiltItemSettings()));
+	public static final Item ION_DUST = registerItem("ion_dust", new Item(new QuiltItemSettings()));
 
 	private static Item registerItem(String name, Item item) {
 		return Registry.register(Registries.ITEM, new Identifier(ChroniteCore.MOD_ID, name), item);

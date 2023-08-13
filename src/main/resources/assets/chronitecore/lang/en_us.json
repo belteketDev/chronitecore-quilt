@@ -1,6 +1,10 @@
 {
-  "item.chonitecore.chronite": "Chronite",
+  "item.chronitecore.chronite": "Chronite",
   "itemgroup.chronite": "ChroniteCore",
   "block.chronitecore.ionized_chronite_block": "Ionized Chronite Block",
-  "subtitles.chronitecore.shockwave": "Nuclear shockwave"
+  "block.chronitecore.chronite_block": "Chronite Block",
+  "subtitles.chronitecore.shockwave": "Nuclear shockwave",
+  "item.chronitecore.raw_chronite": "Raw Chronite",
+  "item.chronitecore.ion_shard": "Ion Shard",
+  "item.chronitecore.ion_dust": "Ion Dust"
 }

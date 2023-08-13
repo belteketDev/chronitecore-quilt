@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iii",
+    "iii",
+    "iii"
+  ],
+  "key": {
+    "i": {
+      "item": "chronitecore:raw_chronite"
+    }
+  },
+  "result": {
+    "item": "chronitecore:raw_chronite_block",
+    "count": 1
+  }
+}

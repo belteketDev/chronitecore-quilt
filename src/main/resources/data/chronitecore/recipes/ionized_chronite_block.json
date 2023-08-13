@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#A#",
+    "#A#",
+    "#A#"
+  ],
+  "key": {
+    "#": {
+      "item": "chronitecore:chronite_block"
+    },
+    "A": {
+      "item": "chronitecore:ion_shard"
+    }
+  },
+  "result": {
+    "item": "chronitecore:ionized_chronite_block",
+    "count": 1
+  }
+}

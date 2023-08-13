@@ -24,6 +24,8 @@ public class ModBlocks {
             new Block(QuiltBlockSettings.copyOf(Blocks.RAW_IRON_BLOCK).sounds(BlockSoundGroup.CALCITE)));
     public static final Block IONIZED_CHRONITE_BLOCK = registerBlock("ionized_chronite_block",
             new IonizedChroniteBlock(QuiltBlockSettings.copyOf(Blocks.RAW_IRON_BLOCK).sounds(BlockSoundGroup.CALCITE)));
+	public static final Block CHRONITE_BLOCK = registerBlock("chronite_block",
+			new Block(QuiltBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).sounds(BlockSoundGroup.AMETHYST_BLOCK)));
     public static final Block DEEPSLATE_CHRONITE_ORE = registerBlock("deepslate_chronite_ore",
             new ExperienceDroppingBlock(QuiltBlockSettings.copyOf(Blocks.DEEPSLATE_DIAMOND_ORE).strength(5f), UniformIntProvider.create(2,5)));
 
