@@ -1,6 +1,1 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "chronitecore:item/chronite"
-  }
-}
+{"parent": "item/generated", "textures": {   "layer0": "chronitecore:item/chronite" }}
