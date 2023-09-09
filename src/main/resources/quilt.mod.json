@@ -37,7 +37,11 @@
 			},
 			{
 				"id": "lodestone",
-				"versions": "1.19.3-88282d99f6-1"
+				"versions": "88282d99f6"
+			},
+			{
+				"id": "midnightlib",
+				"versions": ">=1.4.1"
 			}
 		]
 	},

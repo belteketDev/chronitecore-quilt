@@ -19,7 +19,7 @@ repositories {
 	maven { url 'https://maven.ladysnake.org/releases' }
 	maven { url 'https://jitpack.io' }
 	maven { url 'https://api.modrinth.com/maven' }
-
+	maven { url = "https://api.modrinth.com/maven" }
 
 
 }
@@ -37,8 +37,12 @@ dependencies {
 	}
 	*/
 	modImplementation libs.quilt.loader
-	modImplementation include("com.github.Arathain:LodestoneLib-Quilt:1.19.3-SNAPSHOT")
+	modImplementation include("com.github.Arathain:LodestoneLib-Quilt:88282d99f6")
 
+
+
+
+	modImplementation include("maven.modrinth:midnightlib:${project.midnightlib_version}")
 	// QSL is not a complete API; You will need Quilted Fabric API to fill in the gaps.
 	// Quilted Fabric API will automatically pull in the correct QSL version.
 	modImplementation libs.quilted.fabric.api

@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "chronitecore:chronite_block",
-    "chronitecore:raw_chronite_block",
-    "chronitecore:deepslate_chronite_ore",
-    "chronitecore:ionized_chronite_block"
-  ]
-}

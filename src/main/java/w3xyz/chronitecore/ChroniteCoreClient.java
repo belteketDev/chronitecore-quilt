@@ -1,11 +1,18 @@
 package w3xyz.chronitecore;
 
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.DimensionVisualEffects;
+import net.minecraft.entity.boss.dragon.EnderDragonEntity;
+import net.minecraft.entity.boss.dragon.phase.AbstractSittingPhase;
+import net.minecraft.entity.boss.dragon.phase.SittingAttackingPhase;
+import net.minecraft.entity.damage.*;
+import net.minecraft.registry.Holder;
 import net.minecraft.registry.Registry;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.dynamic.GlobalPos;
 import net.minecraft.util.math.BlockPos;
@@ -14,12 +21,19 @@ import net.minecraft.world.World;
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.qsl.base.api.entrypoint.client.ClientModInitializer;
 import org.quiltmc.qsl.networking.api.client.ClientPlayNetworking;
+import org.spongepowered.asm.mixin.Mixin;
+import team.lodestar.lodestone.handlers.ScreenshakeHandler;
 import team.lodestar.lodestone.setup.LodestoneParticles;
 import team.lodestar.lodestone.setup.LodestoneRenderLayers;
+import team.lodestar.lodestone.systems.rendering.particle.Easing;
 import team.lodestar.lodestone.systems.rendering.particle.LodestoneWorldParticleTextureSheet;
 import team.lodestar.lodestone.systems.rendering.particle.WorldParticleBuilder;
 import team.lodestar.lodestone.systems.rendering.particle.data.ColorParticleData;
 import team.lodestar.lodestone.systems.rendering.particle.data.GenericParticleData;
+import team.lodestar.lodestone.systems.screenshake.PositionedScreenshakeInstance;
+import team.lodestar.lodestone.systems.screenshake.ScreenshakeInstance;
+import w3xyz.chronitecore.block.custom.IonizedChroniteBlock;
+import w3xyz.chronitecore.sound.ModSounds;
 
 import java.awt.*;
 import java.util.Random;
@@ -42,12 +56,23 @@ public class ChroniteCoreClient implements ClientModInitializer {
 				.addMotion(0, 0)
 				.setRandomOffset(0.5)
 				.spawn(1, 1);*/
+		// Remove the mixin annotation and the abstract class declaration
+		public class ScreenShakeEffect {
+
+			// Make the method static and pass the position as a parameter
+			public static void screenShake(Vec3d pos, int dur) {
+				ScreenshakeInstance screenShake = new PositionedScreenshakeInstance(dur, pos, 20f, 0f, 25f, Easing.CIRC_IN_OUT).setIntensity(1.0f, 2.0f, 1.0f);
+				ScreenshakeHandler.addScreenshake(screenShake);
+			}
+
+		}
 
 
 	@Override
 	public void onInitializeClient(ModContainer mod) {
 		ClientPlayNetworking.registerGlobalReceiver(new Identifier(ChroniteCore.MOD_ID, "particles"), (client, handler, buf, responseSender) -> {
 			GlobalPos globalPos = buf.readGlobalPos();
+			long deley = buf.readLong();
 			BlockPos pos = globalPos.getPos();
 			RegistryKey<World> dimension = globalPos.getDimension();
 			World world = client.world;
@@ -75,6 +100,26 @@ public class ChroniteCoreClient implements ClientModInitializer {
 						afterSmoke(100,pos, world);
 					}
 				}, 16, TimeUnit.SECONDS);
+				PlayerEntity player = MinecraftClient.getInstance().player;
+
+// Check if the player exists
+
+
+				ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
+				executor.schedule(() -> {
+					ChroniteCore.LOGGER.info("now " + deley);
+
+
+
+					int durys = 120;
+					if (player != null) {
+						// Get the player position
+						Vec3d playerPos = player.getPos();
+						// Call the screenShake() method with the player position
+						ScreenShakeEffect.screenShake(playerPos, 120);
+					}
+				}, (long) deley, TimeUnit.SECONDS);
+
 
 			}
 		});

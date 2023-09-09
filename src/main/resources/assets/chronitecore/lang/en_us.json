@@ -3,6 +3,8 @@
   "itemgroup.chronite": "ChroniteCore",
   "block.chronitecore.ionized_chronite_block": "Ionized Chronite Block",
   "block.chronitecore.chronite_block": "Chronite Block",
+  "block.chronitecore.raw_chronite_block": "Raw Chronite Block",
+  "block.chronitecore.deepslate_chronite_ore": "Deepslate Chronite Ore",
   "subtitles.chronitecore.shockwave": "Nuclear shockwave",
   "item.chronitecore.raw_chronite": "Raw Chronite",
   "item.chronitecore.ion_shard": "Ion Shard",
