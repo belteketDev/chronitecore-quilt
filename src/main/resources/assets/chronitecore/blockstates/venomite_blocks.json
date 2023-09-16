@@ -1,0 +1,8 @@
+
+{
+  "variants":{
+    "": {
+      "model": "chronitecore:block/venomite_block"
+    }
+  }
+}

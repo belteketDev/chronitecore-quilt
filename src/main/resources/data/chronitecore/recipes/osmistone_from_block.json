@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:osmistone_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:osmistone",
+    "count": 9
+  }
+}

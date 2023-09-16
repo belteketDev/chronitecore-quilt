@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:moscovite_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:moscovite",
+    "count": 9
+  }
+}

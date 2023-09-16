@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:indigem_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:indigem",
+    "count": 9
+  }
+}

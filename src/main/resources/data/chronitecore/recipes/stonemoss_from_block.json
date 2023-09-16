@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:stonemoss_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:stonemoss",
+    "count": 9
+  }
+}

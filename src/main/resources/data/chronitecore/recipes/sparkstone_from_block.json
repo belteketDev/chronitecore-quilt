@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:sparkstone_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:sparkstone",
+    "count": 9
+  }
+}

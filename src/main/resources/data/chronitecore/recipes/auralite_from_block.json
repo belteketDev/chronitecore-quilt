@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:auralite_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:auralite",
+    "count": 9
+  }
+}

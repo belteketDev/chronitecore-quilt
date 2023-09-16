@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:draconite_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:draconite",
+    "count": 9
+  }
+}

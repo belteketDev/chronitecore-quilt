@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:wolframite_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:wolframite",
+    "count": 9
+  }
+}

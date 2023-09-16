@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:protomyst_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:protomyst",
+    "count": 9
+  }
+}

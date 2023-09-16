@@ -94,10 +94,10 @@ public class IonizedChroniteBlock extends Block {
 				ChroniteCore.LOGGER.info("now " + delay);
 				if (entity instanceof PlayerEntity) {
 					PlayerEntity player = (PlayerEntity) entity;
-					player.playSound(SoundEvents.ENTITY_GENERIC_EXPLODE,
+					player.playSound(ModSounds.SHOCKWAVE,
 							SoundCategory.HOSTILE,
-							22f,
-							-1f);
+							1f,
+							0.5f);
 
 
 				}

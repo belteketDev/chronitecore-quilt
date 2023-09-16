@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:nebulite_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:nebulite",
+    "count": 9
+  }
+}

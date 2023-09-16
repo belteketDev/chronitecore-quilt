@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:pyrofume_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:pyrofume",
+    "count": 9
+  }
+}

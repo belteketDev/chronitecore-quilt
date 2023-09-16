@@ -1,0 +1,8 @@
+
+{
+  "variants":{
+    "": {
+      "model": "chronitecore:block/geocrystal_block"
+    }
+  }
+}

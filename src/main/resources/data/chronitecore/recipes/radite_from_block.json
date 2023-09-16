@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:radite_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:radite",
+    "count": 9
+  }
+}

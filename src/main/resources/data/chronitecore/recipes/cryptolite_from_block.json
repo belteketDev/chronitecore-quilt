@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:cryptolite_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:cryptolite",
+    "count": 9
+  }
+}

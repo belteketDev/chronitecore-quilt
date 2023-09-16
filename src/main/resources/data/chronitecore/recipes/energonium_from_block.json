@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:energonium_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:energonium",
+    "count": 9
+  }
+}

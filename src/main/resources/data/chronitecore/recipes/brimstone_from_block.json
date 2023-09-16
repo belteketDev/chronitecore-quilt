@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:brimstone_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:brimstone",
+    "count": 9
+  }
+}

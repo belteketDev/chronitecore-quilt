@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:tennelite_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:tennelite",
+    "count": 9
+  }
+}

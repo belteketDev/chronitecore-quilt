@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:geocrystal_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:geocrystal",
+    "count": 9
+  }
+}

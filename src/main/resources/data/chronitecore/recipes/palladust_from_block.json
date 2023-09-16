@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:palladust_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:palladust",
+    "count": 9
+  }
+}

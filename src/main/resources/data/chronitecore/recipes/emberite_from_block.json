@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:emberite_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:emberite",
+    "count": 9
+  }
+}

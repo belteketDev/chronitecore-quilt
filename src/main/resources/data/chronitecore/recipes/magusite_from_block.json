@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:magusite_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:magusite",
+    "count": 9
+  }
+}

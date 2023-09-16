@@ -1,6 +1,7 @@
 package w3xyz.chronitecore.block;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.ExperienceDroppingBlock;
 import net.minecraft.item.BlockItem;
@@ -13,6 +14,7 @@ import net.minecraft.util.math.int_provider.UniformIntProvider;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 import w3xyz.chronitecore.ChroniteCore;
+import w3xyz.chronitecore.block.custom.Aquanite_Block;
 import w3xyz.chronitecore.block.custom.IonizedChroniteBlock;
 
 public class ModBlocks {
@@ -22,7 +24,8 @@ public class ModBlocks {
 
     public static final Block IONIZED_CHRONITE_BLOCK = registerBlock("ionized_chronite_block",
             new IonizedChroniteBlock(QuiltBlockSettings.copyOf(Blocks.RAW_IRON_BLOCK).sounds(BlockSoundGroup.CALCITE)));
-
+	//public static final BlockWithEntity GAS_PACKING_STATION = registerBlock("gas_packing_station",
+	//		new GasPackingStation(QuiltBlockSettings.copyOf(Blocks.NETHERITE_BLOCK)));
 	public static final Block CHRONITE_BLOCK = registerBlock("chronite_block",
 			new Block(QuiltBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).sounds(BlockSoundGroup.AMETHYST_BLOCK)));
 	public static final Block CHRONITE_ORE = registerBlock("chronite_ore",
@@ -34,8 +37,7 @@ public class ModBlocks {
 
 	// Aquanite (Hydrogen)
 	public static final Block AQUANITE_BLOCK = registerBlock("aquanite_block",
-			new Block(QuiltBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).sounds(BlockSoundGroup.AMETHYST_BLOCK)));
-
+			new Aquanite_Block(QuiltBlockSettings.copyOf(Blocks.AIR)));
 	// Luminite (Helium)
 	public static final Block LUMINITE_BLOCK = registerBlock("luminite_block",
 			new Block(QuiltBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).sounds(BlockSoundGroup.AMETHYST_BLOCK)));

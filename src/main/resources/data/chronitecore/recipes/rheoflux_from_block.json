@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:rheoflux_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:rheoflux",
+    "count": 9
+  }
+}

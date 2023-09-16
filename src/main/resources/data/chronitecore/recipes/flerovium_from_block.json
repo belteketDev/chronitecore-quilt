@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:flerovium_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:flerovium",
+    "count": 9
+  }
+}

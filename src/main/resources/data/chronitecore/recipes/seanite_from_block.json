@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:seanite_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:seanite",
+    "count": 9
+  }
+}

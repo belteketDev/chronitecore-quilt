@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:solarite_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:solarite",
+    "count": 9
+  }
+}

@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:prismabite_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:prismabite",
+    "count": 9
+  }
+}

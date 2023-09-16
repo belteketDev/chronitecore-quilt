@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:iridespire_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:iridespire",
+    "count": 9
+  }
+}

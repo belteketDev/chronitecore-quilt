@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:glownite_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:glownite",
+    "count": 9
+  }
+}

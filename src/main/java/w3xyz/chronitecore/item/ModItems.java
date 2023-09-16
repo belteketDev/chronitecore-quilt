@@ -7,8 +7,11 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 import w3xyz.chronitecore.ChroniteCore;
+import w3xyz.chronitecore.item.custom.GasContainer;
 
 public class ModItems {
+
+	public static final Item GAS_CONTAINER = registerItem("gas_conatiner", new GasContainer(new QuiltItemSettings()));
 	public static final Item CHRONITE = registerItem("chronite", new Item(new QuiltItemSettings()));
 	public static final Item RAW_CHRONITE = registerItem("raw_chronite", new Item(new QuiltItemSettings()));
 	public static final Item ION_SHARD = registerItem("ion_shard", new Item(new QuiltItemSettings()));

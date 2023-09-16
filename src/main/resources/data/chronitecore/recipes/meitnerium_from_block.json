@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:meitnerium_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:meitnerium",
+    "count": 9
+  }
+}

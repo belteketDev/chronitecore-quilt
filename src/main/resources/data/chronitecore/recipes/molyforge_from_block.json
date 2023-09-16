@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:molyforge_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:molyforge",
+    "count": 9
+  }
+}

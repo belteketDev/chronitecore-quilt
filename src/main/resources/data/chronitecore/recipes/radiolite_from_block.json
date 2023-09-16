@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:radiolite_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:radiolite",
+    "count": 9
+  }
+}

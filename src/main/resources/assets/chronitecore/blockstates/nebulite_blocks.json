@@ -1,0 +1,8 @@
+
+{
+  "variants":{
+    "": {
+      "model": "chronitecore:block/nebulite_block"
+    }
+  }
+}

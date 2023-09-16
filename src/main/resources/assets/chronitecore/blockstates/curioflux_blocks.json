@@ -1,0 +1,8 @@
+
+{
+  "variants":{
+    "": {
+      "model": "chronitecore:block/curioflux_block"
+    }
+  }
+}

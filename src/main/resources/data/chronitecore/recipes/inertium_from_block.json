@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:inertium_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:inertium",
+    "count": 9
+  }
+}

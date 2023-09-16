@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:quicksilva_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:quicksilva",
+    "count": 9
+  }
+}

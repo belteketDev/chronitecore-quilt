@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:aquanite_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:aquanite",
+    "count": 9
+  }
+}

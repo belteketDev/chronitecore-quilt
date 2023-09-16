@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:pyrosurge_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:pyrosurge",
+    "count": 9
+  }
+}

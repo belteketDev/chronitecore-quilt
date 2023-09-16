@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:toxinbite_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:toxinbite",
+    "count": 9
+  }
+}

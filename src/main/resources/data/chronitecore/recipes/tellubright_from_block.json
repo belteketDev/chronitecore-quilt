@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:tellubright_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:tellubright",
+    "count": 9
+  }
+}

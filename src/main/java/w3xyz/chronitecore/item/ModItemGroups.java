@@ -14,6 +14,9 @@ public class ModItemGroups {
 
 	public static final ItemGroup CHRONITE_GROUP = Registry.register(Registries.ITEM_GROUP, new Identifier(ChroniteCore.MOD_ID, "chronite"),
 			FabricItemGroup.builder().name(Text.translatable("itemgroup.chronite")).icon(() -> new ItemStack(ModItems.CHRONITE)).entries(((displayParameters, itemStackCollector) -> {
+				//itemStackCollector.addItem(ModItems.GAS_CONTAINER);
+
+
 				itemStackCollector.addItem(ModItems.CHRONITE);
 				itemStackCollector.addItem(ModItems.RAW_CHRONITE);
 				itemStackCollector.addItem(ModBlocks.IONIZED_CHRONITE_BLOCK);
@@ -22,7 +25,7 @@ public class ModItemGroups {
 				itemStackCollector.addItem(ModBlocks.CHRONITE_BLOCK);
 				itemStackCollector.addItem(ModItems.ION_DUST);
 				itemStackCollector.addItem(ModItems.ION_SHARD);
-				itemStackCollector.addItem(ModBlocks.AQUANITE_BLOCK);
+/*				itemStackCollector.addItem(ModBlocks.AQUANITE_BLOCK);
 				itemStackCollector.addItem(ModBlocks.LUMINITE_BLOCK);
 				itemStackCollector.addItem(ModBlocks.SPARKSTONE_BLOCK);
 				itemStackCollector.addItem(ModBlocks.GEMFORGE_BLOCK);
@@ -250,7 +253,7 @@ public class ModItemGroups {
 				itemStackCollector.addItem(ModItems.LUMINITIUM);
 				itemStackCollector.addItem(ModItems.TENNELITE);
 				itemStackCollector.addItem(ModItems.OGANITE);
-
+*/
 			})).build());
 
 	public static void registerItemGroups() {

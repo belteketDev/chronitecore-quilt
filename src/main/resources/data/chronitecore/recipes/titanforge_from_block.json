@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:titanforge_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:titanforge",
+    "count": 9
+  }
+}

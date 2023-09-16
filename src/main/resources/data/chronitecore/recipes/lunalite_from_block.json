@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:lunalite_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:lunalite",
+    "count": 9
+  }
+}

@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:actinastone_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:actinastone",
+    "count": 9
+  }
+}

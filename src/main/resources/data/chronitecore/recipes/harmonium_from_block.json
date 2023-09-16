@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:harmonium_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:harmonium",
+    "count": 9
+  }
+}

@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:magnetite_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:magnetite",
+    "count": 9
+  }
+}

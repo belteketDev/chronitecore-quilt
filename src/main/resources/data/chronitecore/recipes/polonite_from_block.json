@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:polonite_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:polonite",
+    "count": 9
+  }
+}

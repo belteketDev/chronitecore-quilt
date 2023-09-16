@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:geminite_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:geminite",
+    "count": 9
+  }
+}

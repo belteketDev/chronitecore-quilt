@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:mendelstone_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:mendelstone",
+    "count": 9
+  }
+}

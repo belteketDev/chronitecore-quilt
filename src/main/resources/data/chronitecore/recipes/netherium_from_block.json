@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:netherium_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:netherium",
+    "count": 9
+  }
+}

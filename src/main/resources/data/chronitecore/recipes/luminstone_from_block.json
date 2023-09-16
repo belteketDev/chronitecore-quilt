@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:luminstone_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:luminstone",
+    "count": 9
+  }
+}

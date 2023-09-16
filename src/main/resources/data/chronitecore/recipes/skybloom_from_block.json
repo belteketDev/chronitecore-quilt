@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:skybloom_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:skybloom",
+    "count": 9
+  }
+}

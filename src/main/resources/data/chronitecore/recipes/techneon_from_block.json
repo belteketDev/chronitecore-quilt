@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:techneon_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:techneon",
+    "count": 9
+  }
+}

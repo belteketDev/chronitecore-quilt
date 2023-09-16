@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:terresteel_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:terresteel",
+    "count": 9
+  }
+}

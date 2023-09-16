@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:gemspark_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:gemspark",
+    "count": 9
+  }
+}

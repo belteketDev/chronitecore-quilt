@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:copernicite_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:copernicite",
+    "count": 9
+  }
+}

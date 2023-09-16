@@ -1,0 +1,8 @@
+
+{
+  "variants":{
+    "": {
+      "model": "chronitecore:block/wolframite_block"
+    }
+  }
+}

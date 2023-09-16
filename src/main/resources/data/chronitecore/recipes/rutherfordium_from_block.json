@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chronitecore:rutherfordium_block"
+    }
+  ],
+  "result": {
+    "item": "chronitecore:rutherfordium",
+    "count": 9
+  }
+}
